@@ -1,7 +1,7 @@
-#include <stdio.h>
-
-int _putchar(char c);
-
+#include "main.h"
+/**
+ * main - Etry point
+ * Return: Always 0
 int main(void)
 {
     _putchar('_');
@@ -13,10 +13,4 @@ int main(void)
     _putchar('a');
     _putchar('r');
     _putchar('\n');
-    return 0;
-}
-
-int _putchar(char c)
-{
-    return putchar(c);
-}
+    return (0);
