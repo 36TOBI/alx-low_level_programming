@@ -1,21 +1,26 @@
-@@ -0,0 +1,20 @@
-#include <stdio.h>
 #include "main.h"
 
 /**
- * print_diagsums - Entry point
- * @a: input
- * @size: input
- * Return: Always 0 (Success)
+ * _strspn - gets the length of a prefix substring
+ * @s: the string to search
+ * @accept: the bytes to accept
+ *
+ * Return: number of bytes in the initial segment of s which consist only
+ * of bytes from accept
  */
-void print_diagsums(int *a, int size)
+unsigned int _strspn(char *s, char *accept)
 {
-	int i, n, sum1 = 0, sum2 = 0;
+	unsigned int i, j;
 
-	for (i = 0; i <= (size * size); i = i + size + 1)
-		sum1 = sum1 + a[i];
-
-	for (n = size - 1; n <= (size * size) - size; n = n + size - 1)
-	sum2 = sum2 + a[n];
-	printf("%d, %d\n", sum1, sum2);
+	for (i = 0; s[i]; i++)
+	{
+		for (j = 0; accept[j]; j++)
+		{
+			if (s[i] == accept[j])
+				break;
+		}
+		if (!accept[j])
+			break;
+	}
+	return (i);
 }
